@@ -1,10 +1,13 @@
 <template>
   <div class="container py-5">
-    <datavue source="http://localhost:3030/products" :per-page="5" pagination="dropdown">
+    <datavue :source="products" :per-page="5" pagination="dropdown">
       <template #title>
         <h2>Products Table</h2>
       </template>
       <template #actionbar="{ checkedItems }">
+        <button class="btn btn-outline-primary mr-2" @click="showForm=true">
+          Add new
+        </button>
         <button
           class="btn btn-danger"
           :disabled="!checkedItems.size"
@@ -15,7 +18,7 @@
       </template>
       <template #head="{ sort, sortable, checkAll, isCheckedAll }">
         <tr>
-          <th widht="20">
+          <th width="20">
             <input type="checkbox" @change="checkAll" :checked="isCheckedAll" />
           </th>
           <th :class="sortable('name')" @click="sort('name')">Name</th>
@@ -41,17 +44,37 @@
         </tr>
       </template>
     </datavue>
+    <product-form-view :show="showForm" @close="showForm=false"></product-form-view> 
+    <!-- <app-modal title="Add New Product" :show="showForm"  @close="showForm=false" large scrollable> -->
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import ProductFormView from "./ProductFormView.vue";
+
 export default {
+  components: {
+    ProductFormView
+  },
   data() {
     return {
       products: [],
+      showForm: false
     };
   },
+  mounted () {
+    this.fetchProducts()
+  },
   methods: {
+    async fetchProducts() {
+      try {
+        const { data } = await axios.get("http://localhost:3030/products")
+        this.products = data
+      } catch (error) {
+        console.error(`fecthProduct error : ${error}`)
+      }
+    },
     deleteSelected(items) {
       if (confirm("Are you sure?")) {
         Array.from(items).forEach((item) => {

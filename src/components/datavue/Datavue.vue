@@ -100,7 +100,7 @@ export default {
   },
   data() {
     return {
-      records: [],
+      remoteRecords: [],
       searchTerm: getFromHistory("search", ""),
       sort: {
         by: getFromHistory("sort_by", this.sortKey),
@@ -113,6 +113,13 @@ export default {
     };
   },
   computed: {
+    records() {
+      if (Array.isArray(this.source)) {
+        return this.source;
+      }else {
+        return this.remoteRecords;
+      }
+    },
     recordsFiltered() {
       if (!this.searchTerm) {
         return this.records;
@@ -178,12 +185,8 @@ export default {
       console.log(this.checkedItems.size);
     },
     async setRecords() {
-      if (Array.isArray(this.source)) {
-        this.records = this.source;
-      }
-      else if( typeof this.source=='string'){
-        console.log(this.source)
-        this.records = await this.fetchRecords(this.source)
+      if( typeof this.source=='string'){
+        this.remoteRecords = await this.fetchRecords(this.source)
       }
     },
     async fetchRecords(endpoint) {
