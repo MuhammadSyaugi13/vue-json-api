@@ -1,0 +1,25 @@
+import { createApp } from "vue";
+import App from "./App.vue";
+import AppTest from "./AppTest.vue";
+import "./index.css";
+import AppAlert from "./components/AppAlert.vue";
+import BaseInput from "./components/form/BaseInput.vue";
+import BaseTextarea from "./components/form/BaseTextarea.vue";
+import BaseSelect from "./components/form/BaseSelect.vue";
+import BaseRadio from "./components/form/BaseRadio.vue";
+import BaseRadioGroup from "./components/form/BaseRadioGroup.vue";
+import BaseCheckbox from "./components/form/BaseCheckbox.vue";
+import BaseCheckboxGroup from "./components/form/BaseCheckboxGroup.vue";
+import Datavue from "./components/datavue/Datavue.vue";
+
+const app = createApp(App);
+app.component("datavue", Datavue);
+app.component("app-alert", AppAlert);
+app.component("base-input", BaseInput);
+app.component("base-textarea", BaseTextarea);
+app.component("base-select", BaseSelect);
+app.component("base-radio", BaseRadio);
+app.component("base-radio-group", BaseRadioGroup);
+app.component("base-checkbox", BaseCheckbox);
+app.component("base-checkbox-group", BaseCheckboxGroup);
+app.mount("#app");
