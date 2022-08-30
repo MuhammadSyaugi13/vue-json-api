@@ -1,289 +1,352 @@
 {
-    "categories": [
-        {
-            "id": 1,
-            "name": "Automotive"
-        },
-        {
-            "id": 2,
-            "name": "Baby"
-        },
-        {
-            "id": 3,
-            "name": "Books"
-        },
-        {
-            "id": 4,
-            "name": "Computers"
-        },
-        {
-            "id": 5,
-            "name": "Electronics"
-        },
-        {
-            "id": 6,
-            "name": "Games"
-        },
-        {
-            "id": 7,
-            "name": "Garden"
-        },
-        {
-            "id": 8,
-            "name": "Grocery"
-        },
-        {
-            "id": 9,
-            "name": "Health"
-        },
-        {
-            "id": 10,
-            "name": "Home"
-        },
-        {
-            "id": 11,
-            "name": "Industrial"
-        },
-        {
-            "id": 12,
-            "name": "Jewelery"
-        },
-        {
-            "id": 13,
-            "name": "Kids"
-        },
-        {
-            "id": 14,
-            "name": "Movies"
-        },
-        {
-            "id": 15,
-            "name": "Music"
-        },
-        {
-            "id": 16,
-            "name": "Shoes"
-        },
-        {
-            "id": 17,
-            "name": "Tools"
-        },
-        {
-            "id": 18,
-            "name": "Toys"
-        }
-    ],
-
-    "products": [
-        {
-            "id": 1,
-            "name": "Intelligent Granite Table",
-            "categoryId": 17,
-            "category": "Tools",
-            "price": 787
-        },
-        {
-            "id": 2,
-            "name": "Handcrafted Rubber Hat",
-            "category": "Games",
-            "categoryId": 6,
-            "price": 232
-        },
-        {
-            "id": 3,
-            "name": "Rustic Concrete Salad",
-            "category": "Jewelery",
-            "categoryId": 12,
-            "price": 115
-        },
-        {
-            "id": 4,
-            "name": "Gorgeous Concrete Pizza",
-            "category": "Garden",
-            "categoryId": 7,
-            "price": 250
-        },
-        {
-            "id": 5,
-            "name": "Refined Plastic Shoes",
-            "category": "Health",
-            "categoryId": 9,
-            "price": 844
-        },
-        {
-            "id": 6,
-            "name": "Awesome Metal Soap",
-            "categoryId": 17,
-            "category": "Tools",
-            "price": 326
-        },
-        {
-            "id": 7,
-            "name": "Intelligent Fresh Mouse",
-            "category": "Home",
-            "categoryId": 10,
-            "price": 783
-        },
-        {
-            "id": 8,
-            "name": "Licensed Soft Keyboard",
-            "category": "Music",
-            "categoryId": 15,
-            "price": 361
-        },
-        {
-            "id": 9,
-            "name": "Fantastic Rubber Pants",
-            "category": "Garden",
-            "categoryId": 7,
-            "price": 786
-        },
-        {
-            "id": 10,
-            "name": "Awesome Rubber Ball",
-            "category": "Automotive",
-            "categoryId": 1,
-            "price": 696
-        },
-        {
-            "id": 11,
-            "name": "Handcrafted Soft Pizza",
-            "category": "Health",
-            "categoryId": 9,
-            "price": 31
-        },
-        {
-            "id": 12,
-            "name": "Practical Soft Chips",
-            "category": "Computers",
-            "categoryId": 4,
-            "price": 795
-        },
-        {
-            "id": 13,
-            "name": "Practical Frozen Shirt",
-            "category": "Kids",
-            "categoryId": 13,
-            "price": 879
-        },
-        {
-            "id": 14,
-            "name": "Unbranded Plastic Car",
-            "category": "Toys",
-            "categoryId": 18,
-            "price": 454
-        },
-        {
-            "id": 15,
-            "name": "Handcrafted Plastic Table",
-            "category": "Shoes",
-            "categoryId": 16,
-            "price": 189
-        },
-        {
-            "id": 16,
-            "name": "Intelligent Plastic Car",
-            "category": "Grocery",
-            "categoryId": 8,
-            "price": 202
-        },
-        {
-            "id": 17,
-            "name": "Ergonomic Wooden Pizza",
-            "category": "Electronics",
-            "categoryId": 5,
-            "price": 801
-        },
-        {
-            "id": 18,
-            "name": "Refined Rubber Pants",
-            "category": "Home",
-            "categoryId": 10,
-            "price": 580
-        },
-        {
-            "id": 19,
-            "name": "Small Frozen Hat",
-            "category": "Music",
-            "categoryId": 15,
-            "price": 654
-        },
-        {
-            "id": 20,
-            "name": "Unbranded Cotton Chips",
-            "categoryId": 17,
-            "category": "Tools",
-            "price": 305
-        },
-        {
-            "id": 21,
-            "name": "Unbranded Plastic Chicken",
-            "category": "Baby",
-            "categoryId": 2,
-            "price": 943
-        },
-        {
-            "id": 22,
-            "name": "Rustic Fresh Pizza",
-            "category": "Toys",
-            "categoryId": 18,
-            "price": 647
-        },
-        {
-            "id": 23,
-            "name": "Ergonomic Metal Tuna",
-            "category": "Industrial",
-            "categoryId": 11,
-            "price": 51
-        },
-        {
-            "id": 24,
-            "name": "Unbranded Frozen Chicken",
-            "category": "Movies",
-            "categoryId": 14,
-            "price": 248
-        },
-        {
-            "id": 25,
-            "name": "Ergonomic Cotton Table",
-            "category": "Baby",
-            "categoryId": 2,
-            "price": 4
-        },
-        {
-            "id": 26,
-            "name": "Handmade Frozen Pants",
-            "category": "Home",
-            "categoryId": 10,
-            "price": 731
-        },
-        {
-            "id": 27,
-            "name": "Rustic Cotton Bike",
-            "category": "Jewelery",
-            "categoryId": 12,
-            "price": 161
-        },
-        {
-            "id": 28,
-            "name": "Licensed Metal Bacon",
-            "category": "Books",
-            "categoryId": 3,
-            "price": 331
-        },
-        {
-            "id": 29,
-            "name": "Practical Cotton Soap",
-            "category": "Books",
-            "categoryId": 3,
-            "price": 861
-        },
-        {
-            "id": 30,
-            "name": "Sleek Frozen Tuna",
-            "category": "Electronics",
-            "categoryId": 5,
-            "price": 375
-        }
-    ]
+  "categories": [
+    {
+      "id": 1,
+      "name": "Automotive"
+    },
+    {
+      "id": 2,
+      "name": "Baby"
+    },
+    {
+      "id": 3,
+      "name": "Books"
+    },
+    {
+      "id": 4,
+      "name": "Computers"
+    },
+    {
+      "id": 5,
+      "name": "Electronics"
+    },
+    {
+      "id": 6,
+      "name": "Games"
+    },
+    {
+      "id": 7,
+      "name": "Garden"
+    },
+    {
+      "id": 8,
+      "name": "Grocery"
+    },
+    {
+      "id": 9,
+      "name": "Health"
+    },
+    {
+      "id": 10,
+      "name": "Home"
+    },
+    {
+      "id": 11,
+      "name": "Industrial"
+    },
+    {
+      "id": 12,
+      "name": "Jewelery"
+    },
+    {
+      "id": 13,
+      "name": "Kids"
+    },
+    {
+      "id": 14,
+      "name": "Movies"
+    },
+    {
+      "id": 15,
+      "name": "Music"
+    },
+    {
+      "id": 16,
+      "name": "Shoes"
+    },
+    {
+      "id": 17,
+      "name": "Tools"
+    },
+    {
+      "id": 18,
+      "name": "Toys"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Intelligent Granite Table",
+      "categoryId": 17,
+      "category": "Tools",
+      "price": 787
+    },
+    {
+      "id": 2,
+      "name": "Handcrafted Rubber Hat",
+      "category": "Games",
+      "categoryId": 6,
+      "price": 232
+    },
+    {
+      "id": 3,
+      "name": "Rustic Concrete Salad",
+      "category": "Jewelery",
+      "categoryId": 12,
+      "price": 115
+    },
+    {
+      "id": 4,
+      "name": "Gorgeous Concrete Pizza",
+      "category": "Garden",
+      "categoryId": 7,
+      "price": 250
+    },
+    {
+      "id": 5,
+      "name": "Refined Plastic Shoes",
+      "category": "Health",
+      "categoryId": 9,
+      "price": 844
+    },
+    {
+      "id": 6,
+      "name": "Awesome Metal Soap",
+      "categoryId": 17,
+      "category": "Tools",
+      "price": 326
+    },
+    {
+      "id": 7,
+      "name": "Intelligent Fresh Mouse",
+      "category": "Home",
+      "categoryId": 10,
+      "price": 783
+    },
+    {
+      "id": 8,
+      "name": "Licensed Soft Keyboard",
+      "category": "Music",
+      "categoryId": 15,
+      "price": 361
+    },
+    {
+      "id": 9,
+      "name": "Fantastic Rubber Pants",
+      "category": "Garden",
+      "categoryId": 7,
+      "price": 786
+    },
+    {
+      "id": 10,
+      "name": "Awesome Rubber Ball",
+      "category": "Automotive",
+      "categoryId": 1,
+      "price": 696
+    },
+    {
+      "id": 11,
+      "name": "Handcrafted Soft Pizza",
+      "category": "Health",
+      "categoryId": 9,
+      "price": 31
+    },
+    {
+      "id": 12,
+      "name": "Practical Soft Chips",
+      "category": "Computers",
+      "categoryId": 4,
+      "price": 795
+    },
+    {
+      "id": 13,
+      "name": "Practical Frozen Shirt",
+      "category": "Kids",
+      "categoryId": 13,
+      "price": 879
+    },
+    {
+      "id": 14,
+      "name": "Unbranded Plastic Car",
+      "category": "Toys",
+      "categoryId": 18,
+      "price": 454
+    },
+    {
+      "id": 15,
+      "name": "Handcrafted Plastic Table",
+      "category": "Shoes",
+      "categoryId": 16,
+      "price": 189
+    },
+    {
+      "id": 16,
+      "name": "Intelligent Plastic Car",
+      "category": "Grocery",
+      "categoryId": 8,
+      "price": 202
+    },
+    {
+      "id": 17,
+      "name": "Ergonomic Wooden Pizza",
+      "category": "Electronics",
+      "categoryId": 5,
+      "price": 801
+    },
+    {
+      "id": 18,
+      "name": "Refined Rubber Pants",
+      "category": "Home",
+      "categoryId": 10,
+      "price": 580
+    },
+    {
+      "id": 19,
+      "name": "Small Frozen Hat",
+      "category": "Music",
+      "categoryId": 15,
+      "price": 654
+    },
+    {
+      "id": 20,
+      "name": "Unbranded Cotton Chips",
+      "categoryId": 17,
+      "category": "Tools",
+      "price": 305
+    },
+    {
+      "id": 21,
+      "name": "Unbranded Plastic Chicken",
+      "category": "Baby",
+      "categoryId": 2,
+      "price": 943
+    },
+    {
+      "id": 22,
+      "name": "Rustic Fresh Pizza",
+      "category": "Toys",
+      "categoryId": 18,
+      "price": 647
+    },
+    {
+      "id": 23,
+      "name": "Ergonomic Metal Tuna",
+      "category": "Industrial",
+      "categoryId": 11,
+      "price": 51
+    },
+    {
+      "id": 24,
+      "name": "Unbranded Frozen Chicken",
+      "category": "Movies",
+      "categoryId": 14,
+      "price": 248
+    },
+    {
+      "id": 25,
+      "name": "Ergonomic Cotton Table",
+      "category": "Baby",
+      "categoryId": 2,
+      "price": 4
+    },
+    {
+      "id": 26,
+      "name": "Handmade Frozen Pants",
+      "category": "Home",
+      "categoryId": 10,
+      "price": 731
+    },
+    {
+      "id": 27,
+      "name": "Rustic Cotton Bike",
+      "category": "Jewelery",
+      "categoryId": 12,
+      "price": 161
+    },
+    {
+      "id": 28,
+      "name": "Licensed Metal Bacon",
+      "category": "Books",
+      "categoryId": 3,
+      "price": 331
+    },
+    {
+      "id": 29,
+      "name": "Practical Cotton Soap",
+      "category": "Books",
+      "categoryId": 3,
+      "price": 861
+    },
+    {
+      "id": 30,
+      "name": "Sleek Frozen Tuna",
+      "category": "Electronics",
+      "categoryId": 5,
+      "price": 375
+    },
+    {
+      "name": "test",
+      "price": 2,
+      "description": "tests",
+      "categoryId": "1",
+      "image": 2,
+      "id": 31
+    },
+    {
+      "name": "1",
+      "price": 1,
+      "description": "sd",
+      "categoryId": "1",
+      "image": "",
+      "id": 32
+    },
+    {
+      "name": "1",
+      "price": 1,
+      "description": "sd",
+      "categoryId": "1",
+      "image": "",
+      "id": 33
+    },
+    {
+      "name": "CPU",
+      "price": 2500,
+      "description": "",
+      "categoryId": "4",
+      "image": "",
+      "id": 34
+    },
+    {
+      "name": "",
+      "price": 0,
+      "description": "",
+      "categoryId": "",
+      "image": "",
+      "id": 35
+    },
+    {
+      "name": "Harry Potter",
+      "price": 28000,
+      "description": "",
+      "categoryId": "14",
+      "image": "",
+      "id": 36
+    },
+    {
+      "name": "Monitor",
+      "price": 1421,
+      "description": "",
+      "categoryId": "4",
+      "image": "",
+      "id": 37
+    },
+    {
+      "name": "lcd",
+      "price": 12312,
+      "description": "",
+      "categoryId": "5",
+      "image": "",
+      "id": 38
+    }
+  ]
 }

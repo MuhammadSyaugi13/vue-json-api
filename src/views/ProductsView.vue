@@ -44,7 +44,8 @@
         </tr>
       </template>
     </datavue>
-    <product-form-view :show="showForm" @close="showForm=false"></product-form-view> 
+    <product-form-view :show="showForm" @created="addRecord($event)" @close="showForm=false"></product-form-view>
+    <app-notify :message="flashMessage" :open="showFlash" @close="showFlash = false"></app-notify> 
     <!-- <app-modal title="Add New Product" :show="showForm"  @close="showForm=false" large scrollable> -->
   </div>
 </template>
@@ -60,13 +61,20 @@ export default {
   data() {
     return {
       products: [],
-      showForm: false
+      showForm: false,
+      showFlash: false,
+      flashMessage: ""
     };
   },
   mounted () {
     this.fetchProducts()
   },
   methods: {
+    addRecord(record){
+      this.products.push(record)
+      this.flashMessage = "Product has been saved"
+      this.showFlash = true
+    },
     async fetchProducts() {
       try {
         const { data } = await axios.get("http://localhost:3030/products")

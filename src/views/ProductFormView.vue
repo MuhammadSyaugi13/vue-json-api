@@ -33,13 +33,13 @@
               <base-input
                 type="text"
                 label="Image"
-                v-model.number="product.image"
+                v-model="product.image"
                 :error="errors['image']"
               ></base-input>
               <base-textarea
                 label="Description"
                 rows="3"
-                v-model.number="product.description"
+                v-model="product.description"
                 :error="errors['description']"
               ></base-textarea>
             </div>
@@ -69,14 +69,27 @@ export default {
       default:false
     }
   },
-  emits: ['close'],
+  emits: ['close', 'created'],
   methods: {
-    handleSubmit() {
-      this.errors = {
-        name: ["The name field is required"],
-        price: ["The price field is required"],
-      };
-      console.log(this.product);
+    async handleSubmit() {
+      try {
+        // const {data:product} = await axios.post("https://safe-hamlet-97497.herokuapp.com/api/products", this.product)
+        const {data:product} = await axios.post("http://localhost:3030/products", this.product)
+        this.$emit('created', product)
+        this.$emit('close')
+      } catch (error) {
+        if (error.response && error.response.status == 422){
+          this.errors = error.response.data.errors
+        }else {
+          console.error(error)
+        }
+
+      }
+      // this.errors = {
+      //   name: ["The name field is required"],
+      //   price: ["The price field is required"],
+      // };
+      // console.log(this.product);
     },
     async fetchProducts() {
       try {
