@@ -124,11 +124,12 @@
       "price": 783
     },
     {
-      "id": 8,
-      "name": "Licensed Soft Keyboard",
-      "category": "Music",
-      "categoryId": 15,
-      "price": 361
+      "name": "",
+      "price": 0,
+      "description": "",
+      "categoryId": "",
+      "image": "",
+      "id": 8
     },
     {
       "id": 9,
@@ -264,11 +265,12 @@
       "price": 161
     },
     {
-      "id": 28,
-      "name": "Licensed Metal Bacon",
-      "category": "Books",
-      "categoryId": 3,
-      "price": 331
+      "name": "",
+      "price": 0,
+      "description": "",
+      "categoryId": "",
+      "image": "",
+      "id": 28
     },
     {
       "id": 29,
@@ -334,7 +336,7 @@
     },
     {
       "name": "Monitor",
-      "price": 1421,
+      "price": 1418,
       "description": "",
       "categoryId": "4",
       "image": "",
@@ -347,6 +349,22 @@
       "categoryId": "5",
       "image": "",
       "id": 38
+    },
+    {
+      "name": "",
+      "price": 0,
+      "description": "",
+      "categoryId": "",
+      "image": "",
+      "id": 39
+    },
+    {
+      "name": "",
+      "price": 0,
+      "description": "",
+      "categoryId": "",
+      "image": "",
+      "id": 40
     }
   ]
 }

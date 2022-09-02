@@ -26,6 +26,7 @@
             Category
           </th>
           <th :class="sortable('price')" @click="sort('price')">Price</th>
+          <th width="150">Action</th>
         </tr>
       </template>
       <template #body="{ records, firstItem, isChecked, checkItem }">
@@ -41,10 +42,13 @@
           <td>{{ product.name }}</td>
           <td>{{ product.category }}</td>
           <td>{{ product.price }}</td>
+          <td>
+            <a href="" class="btn btn-sm btn-info" @click.prevent="editId = product.id, showForm=true">Edit</a>
+          </td>
         </tr>
       </template>
     </datavue>
-    <product-form-view :show="showForm" @created="addRecord($event)" @close="showForm=false"></product-form-view>
+    <product-form-view :show="showForm" @created="addRecord($event)" @updated="updateRecord($event)" @close="showForm=false, editId=null" :id="editId"></product-form-view>
     <app-notify :message="flashMessage" :open="showFlash" @close="showFlash = false"></app-notify> 
     <!-- <app-modal title="Add New Product" :show="showForm"  @close="showForm=false" large scrollable> -->
   </div>
@@ -63,7 +67,8 @@ export default {
       products: [],
       showForm: false,
       showFlash: false,
-      flashMessage: ""
+      flashMessage: "",
+      editId: null
     };
   },
   mounted () {
@@ -73,6 +78,12 @@ export default {
     addRecord(record){
       this.products.push(record)
       this.flashMessage = "Product has been saved"
+      this.showFlash = true
+    },
+    updateRecord(record) {
+      const index = this.products.findIndex((item) => item.id === record.id)
+      this.products.splice(index, 1, record)
+      this.flashMessage = "Product has been updated"
       this.showFlash = true
     },
     async fetchProducts() {

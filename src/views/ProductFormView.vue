@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <AppModal title="Add New Product" :show="show"  @close="$emit('close')" large scrollable>
+    <AppModal :title="getTitle" :show="show"  @close="close()" large scrollable>
       <template #body>
           <div class="row">
             <div class="col-md-12">
@@ -49,7 +49,7 @@
       <template #footer>
         <div>
           <button class="btn btn-primary mr-2">Save</button>
-          <button class="btn btn-outline-secondary" @click="$emit('close')">close</button>
+          <button class="btn btn-outline-secondary" @click="close()">close</button>
         </div>
       </template>
     </AppModal>
@@ -67,13 +67,16 @@ export default {
     show: {
       type: Boolean,
       default:false
+    },
+    id: {
+      type: [String, Number],
+      default: null
     }
   },
-  emits: ['close', 'created'],
+  emits: ['close', 'created', 'updated'],
   methods: {
-    async handleSubmit() {
+    async create() {
       try {
-        // const {data:product} = await axios.post("https://safe-hamlet-97497.herokuapp.com/api/products", this.product)
         const {data:product} = await axios.post("http://localhost:3030/products", this.product)
         this.$emit('created', product)
         this.$emit('close')
@@ -85,13 +88,29 @@ export default {
         }
 
       }
-      // this.errors = {
-      //   name: ["The name field is required"],
-      //   price: ["The price field is required"],
-      // };
-      // console.log(this.product);
     },
-    async fetchProducts() {
+    async update() {
+      try {
+        const {data:product} = await axios.put(`http://localhost:3030/products/${this.id}`, this.product)
+        this.$emit('updated', product)
+        this.$emit('close')
+      } catch (error) {
+        if (error.response && error.response.status == 422){
+          this.errors = error.response.data.errors
+        }else {
+          console.error(error)
+        }
+
+      }
+    },
+    handleSubmit () {
+      if (this.id) {
+        this.update()
+      }else {
+        this.create()
+      }
+    },
+    async fetchCategories() {
       try {
         const { data } = await axios.get("http://localhost:3030/categories");
         this.categories = data.map(category => {
@@ -103,20 +122,40 @@ export default {
       }catch (error) {
         alert('fetch categorie error ' + error) 
       } 
+    },
+    async fetchProducts(id) {
+      try {
+          const { data: product } = await axios.get(`http://localhost:3030/products/${id}`)
+          this.product = product
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    close() {
+      this.product = initialData()
+      this.$emit('close')
+    }
+  },
+  computed: {
+    getTitle() {
+      return this.id ? "Edit Product" : "Add New Product"
     }
   },
   mounted() {
-    this.fetchProducts();
+    this.fetchCategories();
+  },
+  watch: {
+    id (value) {
+      if (value) {
+        const data = this.fetchProducts(value);        
+        console.log('product', this.product)
+      }
+
+    }
   },
   data() {
     return {
-      product: {
-        name: "",
-        price: 0,
-        description: "",
-        categoryId: "",
-        image: "",
-      },
+      product: initialData(),
       errors: {},
       categories: [
         { value: 1, text: "Category 1" },
@@ -127,4 +166,14 @@ export default {
     };
   },
 };
+
+function initialData() {
+  return {
+        name: "",
+        price: 0,
+        description: "",
+        categoryId: "",
+        image: "",
+      }
+}
 </script>
