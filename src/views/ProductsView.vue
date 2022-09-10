@@ -44,6 +44,7 @@
           <td>{{ product.price }}</td>
           <td>
             <a href="" class="btn btn-sm btn-info" @click.prevent="editId = product.id, showForm=true">Edit</a>
+            <a href="" class="btn btn-sm btn-danger ml-2" @click.prevent="deleteRow(product)">Delete</a>
           </td>
         </tr>
       </template>
@@ -55,8 +56,8 @@
 </template>
 
 <script>
-import axios from "axios";
 import ProductFormView from "./ProductFormView.vue";
+import { getProducts, deleteProduct } from "../apis/products-api";
 
 export default {
   components: {
@@ -86,23 +87,44 @@ export default {
       this.flashMessage = "Product has been updated"
       this.showFlash = true
     },
+    async deleteRow(item) {
+      if (confirm('are you sure?')) {
+        this.deleteOne(item);
+
+        this.flashMessage = "Product has been removed"
+        this.showFlash = true
+      }
+    },
     async fetchProducts() {
       try {
-        const { data } = await axios.get("http://localhost:3030/products")
+        // const { data } = await axios.get("http://localhost:3030/products")
+        const { data } = await getProducts();
         this.products = data
       } catch (error) {
         console.error(`fecthProduct error : ${error}`)
       }
     },
+    async deleteOne(item) {
+      try {
+        // const response = await axios.delete(`http://localhost:3030/products/${item.id}`)
+        const response = await deleteProduct(item.id)
+        if (response.status == 200 || response.status == 204) {
+          const index = this.products.findIndex( (product) => product.id === item.id );
+          this.products.splice(index, 1);
+        }
+      } catch (error) {
+        console.error(error)
+      }
+    },
     deleteSelected(items) {
       if (confirm("Are you sure?")) {
         Array.from(items).forEach((item) => {
-          const index = this.products.findIndex(
-            (product) => product.id === item.id
-          );
-          this.products.splice(index, 1);
+          this.deleteOne(item)
         });
         items.clear();
+
+        this.flashMessage = "Products selected has been removed"
+        this.showFlash = true
       }
     },
   },

@@ -124,14 +124,6 @@
       "price": 783
     },
     {
-      "name": "",
-      "price": 0,
-      "description": "",
-      "categoryId": "",
-      "image": "",
-      "id": 8
-    },
-    {
       "id": 9,
       "name": "Fantastic Rubber Pants",
       "category": "Garden",
@@ -230,25 +222,11 @@
       "price": 647
     },
     {
-      "id": 23,
-      "name": "Ergonomic Metal Tuna",
-      "category": "Industrial",
-      "categoryId": 11,
-      "price": 51
-    },
-    {
       "id": 24,
       "name": "Unbranded Frozen Chicken",
       "category": "Movies",
       "categoryId": 14,
       "price": 248
-    },
-    {
-      "id": 25,
-      "name": "Ergonomic Cotton Table",
-      "category": "Baby",
-      "categoryId": 2,
-      "price": 4
     },
     {
       "id": 26,
@@ -265,18 +243,10 @@
       "price": 161
     },
     {
-      "name": "",
-      "price": 0,
-      "description": "",
-      "categoryId": "",
-      "image": "",
-      "id": 28
-    },
-    {
       "id": 29,
       "name": "Practical Cotton Soap",
       "category": "Books",
-      "categoryId": 3,
+      "categoryId": "2",
       "price": 861
     },
     {
@@ -293,38 +263,6 @@
       "categoryId": "1",
       "image": 2,
       "id": 31
-    },
-    {
-      "name": "1",
-      "price": 1,
-      "description": "sd",
-      "categoryId": "1",
-      "image": "",
-      "id": 32
-    },
-    {
-      "name": "1",
-      "price": 1,
-      "description": "sd",
-      "categoryId": "1",
-      "image": "",
-      "id": 33
-    },
-    {
-      "name": "CPU",
-      "price": 2500,
-      "description": "",
-      "categoryId": "4",
-      "image": "",
-      "id": 34
-    },
-    {
-      "name": "",
-      "price": 0,
-      "description": "",
-      "categoryId": "",
-      "image": "",
-      "id": 35
     },
     {
       "name": "Harry Potter",
@@ -351,20 +289,12 @@
       "id": 38
     },
     {
-      "name": "",
-      "price": 0,
+      "name": "Adidas",
+      "price": 240,
       "description": "",
-      "categoryId": "",
+      "categoryId": "16",
       "image": "",
       "id": 39
-    },
-    {
-      "name": "",
-      "price": 0,
-      "description": "",
-      "categoryId": "",
-      "image": "",
-      "id": 40
     }
   ]
 }

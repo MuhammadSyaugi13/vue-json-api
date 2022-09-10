@@ -57,8 +57,10 @@
 </template>
 
 <script>
-import axios from 'axios';
 import AppModal from "../components/AppModal.vue";
+import { showProduct, createProduct, updateProduct } from "../apis/products-api";
+import { getCategories } from "../apis/categories-api"
+
 export default {
   components: {
     AppModal,
@@ -77,7 +79,8 @@ export default {
   methods: {
     async create() {
       try {
-        const {data:product} = await axios.post("http://localhost:3030/products", this.product)
+        // const {data:product} = await axios.post("http://localhost:3030/products", this.product)
+        const {data:product} = await createProduct(this.product)
         this.$emit('created', product)
         this.$emit('close')
       } catch (error) {
@@ -91,7 +94,8 @@ export default {
     },
     async update() {
       try {
-        const {data:product} = await axios.put(`http://localhost:3030/products/${this.id}`, this.product)
+        // const {data:product} = await axios.put(`http://localhost:3030/products/${this.id}`, this.product)
+        const {data:product} = await updateProduct(this.id, this.product)
         this.$emit('updated', product)
         this.$emit('close')
       } catch (error) {
@@ -112,7 +116,7 @@ export default {
     },
     async fetchCategories() {
       try {
-        const { data } = await axios.get("http://localhost:3030/categories");
+        const { data } = await getCategories();
         this.categories = data.map(category => {
           return {
             value: category.id, 
@@ -125,7 +129,7 @@ export default {
     },
     async fetchProducts(id) {
       try {
-          const { data: product } = await axios.get(`http://localhost:3030/products/${id}`)
+          const { data: product } = await showProduct(id)
           this.product = product
       } catch (error) {
         console.error(error)
@@ -147,8 +151,7 @@ export default {
   watch: {
     id (value) {
       if (value) {
-        const data = this.fetchProducts(value);        
-        console.log('product', this.product)
+        this.fetchProducts(value);
       }
 
     }
